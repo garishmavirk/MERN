@@ -1,0 +1,42 @@
+.Status {
+  font-family: sans-serif;
+  text-align: center;
+  color: #ffc100;
+  background: black;
+}
+
+.welcome {
+  font-size: 4rem;
+}
+
+.center {
+  padding: 5%;
+  background: transparent;
+  height: 100rem;
+  width: 40rem;
+}
+
+.description {
+  color: #ffd44f;
+}
+
+button {
+  color: #ffd44f;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.17rem;
+}
+
+button:hover {
+  color: white;
+}
+
+.imgstatus {
+  height: 9.5rem;
+  width: 9.5rem;
+}
+
+.imgstatus:hover {
+  box-shadow: 0 0 2px 1px white;
+}

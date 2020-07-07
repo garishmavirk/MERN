@@ -1,0 +1,117 @@
+.heading {
+  text-align: center;
+  font-size: 2em;
+  color: #ffc100;
+  margin: 20px 0 30px;
+}
+
+.cardemployee {
+  border-radius: 25px;
+  position: relative;
+  padding: 25px 15px;
+  margin: 50px 50px;
+  height: 7rem;
+  width: 25rem;
+  box-shadow: 0 2px 5px #ccc;
+  text-align: left;
+  background-color: #ffc100;
+}
+
+.top {
+  border-radius: 25px 25px 0 0;
+  height: 40px;
+  background-color: #ffc100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.name {
+  font-size: 2em;
+  color: black;
+  display: flex;
+  flex: 1;
+  margin: 10% 20px 0;
+}
+
+.card img {
+  margin: 30px 20px 0 0;
+}
+
+.circle-img {
+  border-radius: 50%;
+  border: 7px solid #fff;
+  width: 5rem;
+  height: 5rem;
+  margin-top: 0.5rem;
+}
+
+.bottom {
+  margin-top: 75px;
+}
+
+.info {
+  margin: 20px 0;
+  color: black;
+}
+.backemployees {
+  background: black;
+  text-align: center;
+}
+
+.left {
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+}
+
+.right {
+  width: 45%;
+  background: transparent;
+  z-index: 2;
+  display: inline-block;
+  color: #ccc;
+  height: 50%;
+  text-align: center;
+  margin-left: 13rem;
+}
+
+#fname{
+  background: #DCDCDC;
+}
+.submit{
+  background: #ffc100;
+  border-color: #ffc100;
+  width: 13.3rem;
+  height: 2.3rem;
+  font-size: large;
+  margin-bottom: 0.6rem;
+}
+.submit:hover{
+  background: #ffff10;
+}
+
+.display{
+  text-align: center;
+}
+
+form{
+  text-align: center;
+  margin: auto;
+  font-family: sans-serif ;
+  font-size: large;
+}
+
+.space{
+  padding: 0.5rem;
+}
+
+input{
+  background-color: gainsboro;
+  border-radius: 2rem;
+  width: 12.5rem;
+  height: 2rem;
+  padding: 0.2rem;
+  outline: 0;
+}

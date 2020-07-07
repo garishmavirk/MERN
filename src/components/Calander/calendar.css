@@ -1,0 +1,20 @@
+.calendar{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    color: #ffd44f;
+    
+}
+
+.cal{
+    height: 45%;
+    width: 35%;
+    display: inline-block;
+}
+.cal h1{
+    margin: 3rem;
+}
+body{
+    margin: 0;
+}
