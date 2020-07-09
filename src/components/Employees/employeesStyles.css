@@ -67,14 +67,14 @@
 }
 
 .right {
-  width: 45%;
+  width: 35%;
   background: transparent;
   z-index: 2;
   display: inline-block;
   color: #ccc;
   height: 50%;
   text-align: center;
-  margin-left: 13rem;
+  margin-left: auto;
 }
 
 #fname{
@@ -83,10 +83,14 @@
 .submit{
   background: #ffc100;
   border-color: #ffc100;
-  width: 13.3rem;
-  height: 2.3rem;
+  width: 14.45rem;
+  height: 2.5rem;
   font-size: large;
   margin-bottom: 0.6rem;
+  border-radius: 2rem;
+  color: white;
+  padding: 0.1%;
+  outline: none;
 }
 .submit:hover{
   background: #ffff10;
@@ -110,7 +114,7 @@ form{
 input{
   background-color: gainsboro;
   border-radius: 2rem;
-  width: 12.5rem;
+  width: 14rem;
   height: 2rem;
   padding: 0.2rem;
   outline: 0;

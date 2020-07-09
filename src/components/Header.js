@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import img from "./2.png";
+import img from "./statusneo.png";
 import "./Dashboard.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Icons3 from "./Home/Icons3";
@@ -16,11 +16,15 @@ function Render2() {
 
 function Header() {
   return (
-    <header>
-      <img src={img} />
-      <div class="menu">
-        <button onClick={Render1}>Home</button>
-        <button onClick={Render2}>Dashboard</button>
+    <header> 
+      <div>
+        <div class="hImg">
+          <img className="hImg" src={img} />
+        </div>
+        <div className="menu">
+          <button class="buttonHeader" onClick={Render1}>Home</button>
+          <button class="buttonHeader" onClick={Render2}>Dashboard</button>
+        </div>
       </div>
     </header>
   );

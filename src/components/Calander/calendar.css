@@ -1,20 +1,41 @@
+body{
+    margin: 0;
+}
+
+
 .calendar{
     height: 100vh;
     width: 100%;
     background-color: black;
     text-align: center;
-    color: #ffd44f;
+    
     
 }
 
-.cal{
-    height: 45%;
-    width: 35%;
-    display: inline-block;
-}
-.cal h1{
+.calendar h1{
     margin: 3rem;
+    color: #ffd44d;
 }
-body{
-    margin: 0;
+
+.cal{
+    width: 30%;
+    display: inline-block;
+    box-shadow: 0 0 2px 1px white;
+    padding: 0.3rem;
+    color: #ffd44d;
+}
+
+
+
+.cal button{
+    background-color: transparent;
+    color: #ffc409;
+    border: none;
+    height: 3rem;
+    font-size: large;
+    outline: none;
+}
+
+.cal button:hover{
+    color: whitesmoke;
 }

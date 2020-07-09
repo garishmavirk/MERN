@@ -4,6 +4,7 @@ import axios from "axios";
 import Dashboard from "../Dashboard";
 import ByName from "./byname";
 import Status from "./Status";
+import "./employeesStyles.css";
 
 export default class Fetch extends Component {
   constructor(props) {
@@ -77,8 +78,7 @@ export default class Fetch extends Component {
             <label className="space" for="fname">Search by Name</label>
             <br />
             <input type="text" id="fname" name="fname" placeholder=" Employee Name" onChange={this.onChangeempName} />
-            <br />
-            <br />
+            <br /><br /> 
             <label className="space" for="fname">Search by Filter</label>
             <br />
           <input list="browsers" placeholder=" Select" onChange={this.onChangefilter} />
@@ -89,7 +89,7 @@ export default class Fetch extends Component {
             <option value="On Sick Leave" />
             <option value="Business Trip" />
           </datalist>
-          <br />
+          <br /><br />
             <br />
             <button type="button" className="submit" onClick ={this.Render1}>
           Search

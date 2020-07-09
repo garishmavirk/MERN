@@ -8,7 +8,7 @@ import BarGraph from "./Graph";
 
 function Dashboard() {
   return (
-    <div class="card">
+    <div class="dashboardCard">
       <Header />
       <div class="tables">
         <table cellspacing="4rem">

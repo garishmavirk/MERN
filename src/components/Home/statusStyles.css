@@ -4,6 +4,9 @@
   color: #ffc100;
   background: black;
 }
+.Status table{
+  
+}
 
 .welcome {
   font-size: 4rem;
@@ -14,13 +17,14 @@
   background: transparent;
   height: 100rem;
   width: 40rem;
+  
 }
 
 .description {
   color: #ffd44f;
 }
 
-button {
+.button {
   color: #ffd44f;
   background: transparent;
   border: none;
@@ -28,7 +32,7 @@ button {
   font-size: 1.17rem;
 }
 
-button:hover {
+.button:hover {
   color: white;
 }
 

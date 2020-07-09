@@ -1,6 +1,6 @@
 import React from 'react';
 import "./geolocation.css";
-
+import Header from "../Header";
 class GeoLocation extends React.Component {
     constructor(props) {
         super(props);
@@ -49,6 +49,7 @@ class GeoLocation extends React.Component {
     render() {
         return (
             <div className="map">
+              <Header />
                 <h2>GeoLocation</h2>
                 <button onClick={this.getLocation}>Get location</button>
                 <br />
@@ -57,7 +58,7 @@ class GeoLocation extends React.Component {
                 <br />
                 <h2>
                 longitude: {this.state.longitude}</h2>
-                <img src="http://maps.googleapis.com/maps/api/geocode/json?latlng=[28],[46]&sensor=true" alt='' />
+                <img class="mapImg" src="http://maps.googleapis.com/maps/api/geocode/json?latlng=28,46&sensor=true" alt='map' />
             </div>
         )
     }

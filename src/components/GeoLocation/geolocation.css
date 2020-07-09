@@ -1,10 +1,12 @@
-.map { width: 400px;
+.mapImg{ width: 400px;
     height: 400px;
     background-color: bisque;
 }
-img{
-    width: 200px;
-    height: 200px;
-    background-color: aquamarine;
 
+.map{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: #ffc626;
+    text-align: center;
 }

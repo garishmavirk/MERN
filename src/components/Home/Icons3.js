@@ -26,38 +26,38 @@ export default function Icons3() {
     <div className="Status">
       <Header />
       <p class="welcome">Welcome {name}!</p>
-      <table class="center">
+      <table class="center" cellspacing="10rem">
         <tbody>
           <tr>
             <td>
-              <button onClick={RenderStatus}>
+              <button className = "button" onClick={RenderStatus}>
                 <img class="imgstatus" src={status} alt="status" />
               </button>
             </td>
             <td>
-              <button onClick={RenderGeoLocation}>
+              <button className = "button" onClick={RenderGeoLocation}>
                 <img class="imgstatus" src={geolocation} alt="location" />
               </button>
             </td>
             <td>
-              <button onClick={RenderCalander}>
+              <button className = "button" onClick={RenderCalander}>
                 <img class="imgstatus" src={calander} alt="calender" />
               </button>
             </td>
           </tr>
           <tr class="description">
             <td>
-              <button onClick={RenderStatus}>
+              <button className = "button" onClick={RenderStatus}>
                 <h3>Status</h3>
               </button>
             </td>
             <td>
-              <button onClick={RenderGeoLocation}>
+              <button className = "button" onClick={RenderGeoLocation}>
                 <h3>GeoLocation</h3>
               </button>
             </td>
             <td>
-              <button onClick={RenderCalander}>
+              <button className = "button" onClick={RenderCalander}>
                 <h3>Calender</h3>
               </button>
             </td>
