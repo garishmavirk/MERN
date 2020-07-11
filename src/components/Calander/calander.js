@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 import Calendar from 'react-calendar';
 import "./calendar.css";
+import "react-calendar/dist/Calendar.css";
 import Header from "../Header";
 
 const ReactCalendar = () => {
@@ -16,9 +17,12 @@ const ReactCalendar = () => {
             <Header />
             <h1>Calendar</h1>
             <div class="cal">
-                <Calendar onChange={onChange} value={date} />
+                <Calendar onChange={onChange} value={date}/>
                 {console.log(date)}
                 {date.toDateString()}
+            </div>
+            <div className="scheduler">
+                
             </div>
         </div>
     );

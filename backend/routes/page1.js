@@ -17,6 +17,16 @@ router.route('/findByName').post((req, res) => {
 });
 
 
+router.route('/findByFilter').post((req, res) => {
+  
+  console.log("in /find req res ..req.body.status: " + req.body.status);
+
+  Employee.findOne({ status: req.body.status })
+    .then(page1 => {res.json(page1)})
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
 router.route('/add').post((req, res) => {
   const empID = req.body.empID;
   const empName = req.body.empName;
