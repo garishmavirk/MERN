@@ -13,6 +13,7 @@ export default class Fetch extends Component {
     this.onChangeempName = this.onChangeempName.bind(this);
     this.onChangefilter = this.onChangefilter.bind(this);
     this.Render1 = this.Render1.bind(this);
+    this.Render2 = this.Render2.bind(this);
   
     this.state = {
       empName: '',
@@ -30,7 +31,7 @@ export default class Fetch extends Component {
 
   onChangefilter(e){
     this.setState({filter: e.target.value});
-    console.log("status---->>>" + this.state.filter);
+    console.log(this.state.filter);
   }
 
   Render1(e){
@@ -39,13 +40,11 @@ export default class Fetch extends Component {
     console.log("on submit");
     
     const user = {
-      empName: this.state.empName,
-      filter: this.state.filter
+      empName: this.state.empName
     }
     
     console.log(user)
     console.log(user.empName);
-    console.log(user.filter);
 
    axios.post('http://localhost:5000/page1/findByName', user)
    .then(res => {
@@ -72,19 +71,19 @@ export default class Fetch extends Component {
     //ReactDOM.render(<Dashboard />, document.getElementById("root"));
     console.log("on submit filter");
     
-    const status = {
+    const filterStatus = {
       filter: this.state.filter
     }
     
-    console.log(status)
-    console.log(status.filter);
+    console.log(filterStatus);
+    console.log("status.filter" + filterStatus.filter);
 
-   axios.post('http://localhost:5000/page1/findByFilter', status)
+   axios.post('http://localhost:5000/page1/findByFilter', filterStatus)
    .then(res => {
      const data = res.data;
      this.setState( { posts: data });
     console.log(this.state.posts); 
-    if (res.data.status === status.filter){
+    if (res.data.status === filterStatus){
     console.log(res.data);
   }
   })

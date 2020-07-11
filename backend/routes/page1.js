@@ -19,11 +19,11 @@ router.route('/findByName').post((req, res) => {
 
 router.route('/findByFilter').post((req, res) => {
   
-  console.log("in /find req res ..req.body.status: " + req.body.status);
+  console.log("in /find req res ..req.body.status: " + req.body.filter);
 
-  Employee.findOne({ status: req.body.status })
+  Employee.find({ status: req.body.filter })
     .then(page1 => {res.json(page1)})
-    .catch(err => res.status(400).json('Error: ' + err));
+    .catch(err => res.status(400).json('Error in finding filter: ' + err));
 });
 
 
