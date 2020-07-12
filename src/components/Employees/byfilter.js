@@ -5,7 +5,27 @@ import Header from "../Header";
 import "./employeesStyles.css";
 import Fetch from "./fetchDetails";
 
-function ByName(user) {
+function ByFilter(user) {
+  console.log(user.user[0])
+
+  function createCard(user1){
+    return (
+    <Card 
+    name={user1.empName}
+    img={employees[0].imgUrl}
+    tel={user1.phone}
+    status={user1.status} />);
+  }
+
+  function loop(user){
+  return (
+        <div>
+          {user.user.map(createCard)}
+        </div>
+      );
+    }
+
+
   return (
     <div className="backemployees">
       <Header />
@@ -15,15 +35,10 @@ function ByName(user) {
       <h1 className="heading">My employees</h1>
       
       <div class="left">
-        <Card
-          name={user.name}
-          img={employees[0].imgURL}
-          tel={user.tel}
-          status={user.status}
-        />
-        </div>
+        {loop(user)}
+      </div>
     </div>
   );
 }
 
-export default ByName;
+export default ByFilter;

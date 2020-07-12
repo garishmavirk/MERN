@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import Dashboard from "../Dashboard";
-import ByName from "./byname";
+import ByFilter from "./byfilter";
 import Status from "./Status";
 import "./employeesStyles.css";
+import Card from "./Card";
+import employees from "./employees";
 
 export default class Fetch extends Component {
   constructor(props) {
@@ -17,8 +19,7 @@ export default class Fetch extends Component {
   
     this.state = {
       empName: '',
-      filter: '',
-      posts: []
+      filter: ''
     }
     
   }
@@ -37,34 +38,26 @@ export default class Fetch extends Component {
   Render1(e){
     e.preventDefault();
     //ReactDOM.render(<Dashboard />, document.getElementById("root"));
-    console.log("on submit");
+    console.log("on submit name");
     
     const user = {
       empName: this.state.empName
     }
     
-    console.log(user)
-    console.log(user.empName);
+    console.log(user);
+    console.log("user.name" + user.empName);
 
    axios.post('http://localhost:5000/page1/findByName', user)
    .then(res => {
      const data = res.data;
-     this.setState( { posts: data });
-    console.log(this.state.posts); 
-    if (res.data.empName === user.empName){
-    console.log(user.empName);
     ReactDOM.render(
-    <ByName
-    name={this.state.empName}
-    status={res.data.status}
-    tel={res.data.phone}
-     />, document.getElementById("root"));
-
-  }
+      <ByFilter
+      user = {res.data}
+       />, document.getElementById("root"));
   })
-   .catch(err => console.log("errorrr in name"));
-   //window.location = '/';
+   .catch(err => console.log("errorrr--->>in searching name"));
   }
+
 
   Render2(e){
     e.preventDefault();
@@ -82,10 +75,10 @@ export default class Fetch extends Component {
    .then(res => {
      const data = res.data;
      this.setState( { posts: data });
-    console.log(this.state.posts); 
-    if (res.data.status === filterStatus){
-    console.log(res.data);
-  }
+    ReactDOM.render(
+      <ByFilter
+      user = {res.data}
+       />, document.getElementById("root"));
   })
    .catch(err => console.log("errorrr--->>in filtering"));
    //window.location = '/';
@@ -101,12 +94,12 @@ export default class Fetch extends Component {
         <form>
           <fieldset className="space">
             <legend className="space">Status</legend>
-            <label className="space" for="fname">Search by Name</label>
+            <label className="searchlabel" for="fname">Search by Name</label>
             <br />
             <input type="text" id="fname" name="fname" placeholder=" Employee Name" onChange={this.onChangeempName} />
-            <button type="button" className="submit" onClick ={this.Render1}>Search</button>
+            <button type="button" className="searchbysubmit" onClick ={this.Render1}>Search</button>
             <br /><br /> 
-            <label className="space" for="fname">Search by Filter</label>
+            <label className="searchlabel" for="fname">Search by Filter</label>
             <br />
           <input list="browsers" placeholder=" Select" onChange={this.onChangefilter} />
           <datalist id="browsers" >
@@ -116,7 +109,7 @@ export default class Fetch extends Component {
             <option value="On Sick Leave" />
             <option value="Business Trip" />
           </datalist>
-          <button type="button" className="submit" onClick ={this.Render2}>Search</button>
+          <button type="button" className="searchbysubmit" onClick ={this.Render2}>Search</button>
           <br /><br />
             <br />
           </fieldset>

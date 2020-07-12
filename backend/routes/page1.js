@@ -11,7 +11,7 @@ router.route('/findByName').post((req, res) => {
   
   console.log("in /find req res ..req.body.empName: " + req.body.empName);
 
-  Employee.findOne({ empName: req.body.empName })
+  Employee.find({ empName: req.body.empName })
     .then(page1 => {res.json(page1), console.log(res.body);})
     .catch(err => res.status(400).json('Error: ' + err));
 });

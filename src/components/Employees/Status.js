@@ -1,11 +1,27 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import Card from "./Card";
 import employees from "./employees";
 import Header from "../Header";
 import "./employeesStyles.css";
 import Fetch from "./fetchDetails";
+import ByFilter from "./byfilter";
+import axios from "axios";
 
 function Status() {
+  function Render(){
+  axios.get('http://localhost:5000/page1/')
+   .then(res => {
+     console.log("data correctly fetched" + res.data);
+     const data = res.data;
+    ReactDOM.render(
+      <ByFilter
+      user = {res.data}
+       />, document.getElementById("root"));
+  })
+   .catch(err => console.log("errorrr--->>in displaying all"));
+}
+
   return (
     <div className="backemployees">
       <Header />
@@ -15,114 +31,7 @@ function Status() {
       <h1 className="heading">My employees</h1>
       
       <div class="left">
-        <Card
-          name={employees[0].name}
-          img={employees[0].imgURL}
-          tel={employees[0].phone}
-          email={employees[0].email}
-        />
-        <Card
-          name={employees[1].name}
-          img={employees[1].imgURL}
-          tel={employees[1].phone}
-          email={employees[1].email}
-        />
-        <Card
-          name={employees[2].name}
-          img={employees[2].imgURL}
-          tel={employees[2].phone}
-          email={employees[2].email}
-        />
-        <Card
-          name={employees[0].name}
-          img={employees[0].imgURL}
-          tel={employees[0].phone}
-          email={employees[0].email}
-        />
-        <Card
-          name={employees[1].name}
-          img={employees[1].imgURL}
-          tel={employees[1].phone}
-          email={employees[1].email}
-        />
-        <Card
-          name={employees[2].name}
-          img={employees[2].imgURL}
-          tel={employees[2].phone}
-          email={employees[2].email}
-        />
-        <Card
-          name={employees[0].name}
-          img={employees[0].imgURL}
-          tel={employees[0].phone}
-          email={employees[0].email}
-        />
-        <Card
-          name={employees[1].name}
-          img={employees[1].imgURL}
-          tel={employees[1].phone}
-          email={employees[1].email}
-        />
-        <Card
-          name={employees[2].name}
-          img={employees[2].imgURL}
-          tel={employees[2].phone}
-          email={employees[2].email}
-        />
-        <Card
-          name={employees[0].name}
-          img={employees[0].imgURL}
-          tel={employees[0].phone}
-          email={employees[0].email}
-        />
-        <Card
-          name={employees[1].name}
-          img={employees[1].imgURL}
-          tel={employees[1].phone}
-          email={employees[1].email}
-        />
-        <Card
-          name={employees[2].name}
-          img={employees[2].imgURL}
-          tel={employees[2].phone}
-          email={employees[2].email}
-        />
-        <Card
-          name={employees[0].name}
-          img={employees[0].imgURL}
-          tel={employees[0].phone}
-          email={employees[0].email}
-        />
-        <Card
-          name={employees[1].name}
-          img={employees[1].imgURL}
-          tel={employees[1].phone}
-          email={employees[1].email}
-        />
-        <Card
-          name={employees[2].name}
-          img={employees[2].imgURL}
-          tel={employees[2].phone}
-          email={employees[2].email}
-        />
-        <Card
-          name={employees[0].name}
-          img={employees[0].imgURL}
-          tel={employees[0].phone}
-          email={employees[0].email}
-        />
-        <Card
-          name={employees[1].name}
-          img={employees[1].imgURL}
-          tel={employees[1].phone}
-          email={employees[1].email}
-        />
-        <Card
-          name={employees[2].name}
-          img={employees[2].imgURL}
-          tel={employees[2].phone}
-          email={employees[2].email}
-        />
+      {Render()}
       </div>
     </div>
   );

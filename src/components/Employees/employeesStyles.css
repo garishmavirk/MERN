@@ -80,10 +80,10 @@
 #fname{
   background: #DCDCDC;
 }
-.submit{
+.searchbysubmit{
   background: #ffc100;
   border-color: #ffc100;
-  width: 14.45rem;
+  width: 7rem;
   height: 2.5rem;
   font-size: large;
   margin-bottom: 0.6rem;
@@ -92,7 +92,7 @@
   padding: 0.1%;
   outline: none;
 }
-.submit:hover{
+.searchbysubmit:hover{
   background: #ffff10;
 }
 
@@ -107,15 +107,17 @@ form{
   font-size: large;
 }
 
-.space{
-  padding: 0.5rem;
+.searchlabel{
+  float: left;
+  padding-left: 10.2%;
 }
 
 input{
   background-color: gainsboro;
   border-radius: 2rem;
-  width: 14rem;
+  width: 18rem;
   height: 2rem;
   padding: 0.2rem;
   outline: 0;
+  margin-right: 2%;
 }
