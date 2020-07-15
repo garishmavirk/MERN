@@ -1,12 +1,40 @@
-.mapImg{ width: 400px;
-    height: 400px;
-    background-color: bisque;
-}
-
 .map{
-    height: 100%;
     width: 100%;
+    height: 100%;
     background-color: black;
     color: #ffc626;
     text-align: center;
+    display: inline-block;
 }
+.mapImg{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    text-align: center;
+}
+.mapImginside{
+    width: 50%;
+    margin-left: 26%;
+}
+.getLocation{
+        font-size: 1.3120rem;
+        padding: 0.3120rem 1.20rem;
+        border: 0;
+        background-color: #ffc400;
+        color: black;
+        border-radius: 0.1875;
+        transition: all 250ms ease-in-out;
+        cursor: pointer;
+        outline: none;
+}
+.getLocation:hover{
+    background-color: yellow
+}
+.getLocation:active{
+    border: oldlace;
+}
+.getLocation:focus {
+     border:0.001rem solid white;
+  }
+
+
