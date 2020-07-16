@@ -21,9 +21,7 @@ body{
     display: inline-block;
     color: #ffc400;
 }
-.react-calendar button {
-    background-color: black;
-}
+
 
 .react-calendar__navigation{
     background-color: black;
