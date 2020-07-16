@@ -4,18 +4,23 @@
     background-color: black;
     color: #ffc626;
     text-align: center;
-    display: inline-block;
 }
 .mapImg{
-    width: 100%;
+    width: 50%;
     height: 100%;
     background-color: black;
+    display: inline-block;
+}
+
+
+.mapImginside{
     text-align: center;
 }
-.mapImginside{
-    width: 50%;
-    margin-left: 26%;
+.mapImginside div{
+    width: 100%;
 }
+
+
 .getLocation{
         font-size: 1.3120rem;
         padding: 0.3120rem 1.20rem;

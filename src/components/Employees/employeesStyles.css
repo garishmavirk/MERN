@@ -1,3 +1,6 @@
+body{
+  background-color: black;
+}
 .heading {
   text-align: center;
   font-size: 2em;
@@ -61,7 +64,6 @@
 }
 
 .left {
-  z-index: 1;
   display: inline-block;
   text-align: center;
 }
@@ -69,7 +71,6 @@
 .right {
   width: 35%;
   background: transparent;
-  z-index: 2;
   display: inline-block;
   color: #ccc;
   height: 50%;

@@ -3,13 +3,13 @@ import "./Dashboard.css";
 import total from "./total.png";
 import onwork from "./onwork.png";
 import employeeofmonth from "./employeeofmonth.png";
-import Header from "./Header";
+import Header1 from "./Header1";
 import BarGraph from "./Graph";
 
 function Dashboard() {
   return (
     <div class="dashboardCard">
-      <Header />
+      <Header1 />
       <div class="tables">
         <table cellspacing="4rem">
           <tbody>

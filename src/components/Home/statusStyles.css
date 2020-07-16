@@ -3,21 +3,29 @@
   text-align: center;
   color: #ffc100;
   background: black;
+  height: 100%;
 }
 .Status table{
+  width: auto;
   
+}
+.Status td{
+  width: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .welcome {
   font-size: 4rem;
+  margin-bottom: 0.6rem;
 }
 
-.center {
+.iconsborder {
   padding: 5%;
   background: transparent;
-  width: 40rem;
-  
-}
+  padding-right: 1rem;
+  padding-left: 1rem;
+  }
 
 .description {
   color: #ffd44f;

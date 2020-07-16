@@ -26,7 +26,7 @@ export default function Icons3() {
     <div className="Status">
       <Header />
       <p class="welcome">Welcome {name}!</p>
-      <table class="center" cellspacing="10rem">
+      <table class="iconsborder">
         <tbody>
           <tr>
             <td>

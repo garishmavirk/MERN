@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import img from "./statusneo.png";
+import img from "./statusneo1.png";
 import setStatus from "./editStatusIcon.png";
 import "./Dashboard.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
