@@ -1,0 +1,81 @@
+.set{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+.lefthalf{
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+}
+.setbox{
+    margin: 5rem auto 5rem auto;
+    padding: 1.1rem;
+    color: #ffc400;
+    display: inline-block;
+    font-size: 3.7rem;
+}
+.setbox p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.setimg{
+    height:25rem;
+    width: 20rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 0.01rem;
+    border-color: ghostwhite; 
+}
+
+.righthalf{
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    float: right;
+}
+.righthalfinside{
+    margin: 4rem;
+    color: #ffc401;
+}
+.righthalfbutton {
+    background: #181818;
+    width: 15rem;
+    height: 2.5rem;
+    font-size: large;
+    margin: 1rem;
+    border-style: solid;
+    border-color: #181818;
+    border-radius: 0.5rem;
+    color: #ffc401;
+    padding: 0.1%;
+    outline: none;
+}
+
+
+.righthalfbutton:focus {
+    background-color: palegoldenrod;
+}
+.setit{
+    margin: 1rem;
+    padding: 0.1%;
+    color: black;
+    display: inline-block;
+    font-size: large;
+    background-color: #ffc400;
+    width: 15rem;
+    height: 2rem;
+    font-size: large;
+    border-style: solid;
+    border-color: #ffc400;
+    border-radius: 0.5rem;
+    outline: none;
+}
+.setit:focus {
+    background-color: yellow;
+    border-color: yellow;
+}
