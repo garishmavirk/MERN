@@ -16,6 +16,14 @@ router.route('/findByName').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/findByempID').post((req, res) => {
+  
+  console.log("in /find req res ..req.body.empID: " + req.body.empID);
+
+  Employee.findOne({ empID: req.body.empID })
+    .then(page1 => {console.log(page1.empID);res.json(page1);})
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 router.route('/findByFilter').post((req, res) => {
   
@@ -24,6 +32,19 @@ router.route('/findByFilter').post((req, res) => {
   Employee.find({ status: req.body.filter })
     .then(page1 => {res.json(page1)})
     .catch(err => res.status(400).json('Error in finding filter: ' + err));
+});
+
+
+router.route('/updateStatus/:id').patch((req, res) => {
+  Employee.findById(req.params.id)
+    .then(page1 => {
+      page1.status = req.body.status;
+
+      page1.save()
+        .then(() => res.json('Employee details updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 
@@ -61,18 +82,13 @@ router.route('/:id').delete((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/update/:id').post((req, res) => {
+router.route('/updateStatus/:id').patch((req, res) => {
   Employee.findById(req.params.id)
     .then(page1 => {
-      page1.empID = req.body.empID;
-      page1.empName = req.body.empName;
       page1.status = req.body.status;
-      page1.location = req.body.location;
-      page1.phone = req.body.phone;
-      page1.email = req.body.email;
-
+      
       page1.save()
-        .then(() => res.json('Employee details updated!'))
+        .then(() => res.json('Employee status updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
     })
     .catch(err => res.status(400).json('Error: ' + err));

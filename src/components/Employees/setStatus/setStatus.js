@@ -48,24 +48,31 @@ export default class SetStatus extends Component {
     console.log("on clicking set this as state");
     
     const user = {
-      status: this.state.status
+      status: this.state.status,
+      empID: "E001"
     }
     
-    console.log(user);
     console.log("user.status" + user.status);
     
     if(user.status.length > 1){
         console.log("status fetching...")
-        this.setState({message: "Status updated successfully!! ["+user.status+"]"});
-   /*axios.post('http://localhost:5000/page1/findByName', user)
-   .then(res => {
-     const data = res.data;
-    this.setState({message: "Status updated successfully!! ["+user.status+"]"});
-  })
-   .catch(err => console.log("errorrr--->>in searching name"));*/
-  }
-  else{
-    this.setState({message: "First select which status you want to set!!"});
+        //this.setState({message: "Status updated successfully!! ["+user.status+"]"});
+        axios.post('http://localhost:5000/page1/findByempID', user)
+        .then(res => {
+          if (res.data.empID === user.empID){
+            console.log(res.data._id);
+            console.log("id matched");
+            axios.patch('http://localhost:5000/page1/updateStatus/'+res.data._id, user)
+            .then(res => {console.log(user.status);
+              this.setState({message: "Status updated successfully!! ["+user.status+"]"});
+            })
+        .catch(err => {console.log("some errorrr");});
+          }
+        })
+        .catch(err => {console.log("some errorrr");});
+      }
+    else{
+      this.setState({message: "First select which status you want to set!!"});
   }
 }
 
@@ -84,11 +91,11 @@ export default class SetStatus extends Component {
             </div>
             <div className="righthalf">
                 <div class="righthalfinside">
-                <button type="button" className="righthalfbutton" onClick ={this.Render1}>At Office</button>
-                <button type="button" className="righthalfbutton" onClick ={this.Render2}>Working From Home</button>
-                <button type="button" className="righthalfbutton" onClick ={this.Render3}>On Leave</button>
-                <button type="button" className="righthalfbutton" onClick ={this.Render4}>On Sick Leave</button>
-                <button type="button" className="righthalfbutton" onClick ={this.Render5}>Business Trip</button>
+                <button type="button" className="righthalfbutton" onClick ={this.Render1}>At Office</button><br />
+                <button type="button" className="righthalfbutton" onClick ={this.Render2}>Working From Home</button><br />
+                <button type="button" className="righthalfbutton" onClick ={this.Render3}>On Leave</button><br />
+                <button type="button" className="righthalfbutton" onClick ={this.Render4}>On Sick Leave</button><br />
+                <button type="button" className="righthalfbutton" onClick ={this.Render5}>Business Trip</button><br />
                 <button className="setit" onClick ={this.onClick}>Set it as your status</button>
                 <br />
                 {this.state.message}
