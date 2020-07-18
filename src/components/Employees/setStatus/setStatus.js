@@ -20,6 +20,7 @@ export default class SetStatus extends Component {
     this.getUserAddress = this.getUserAddress.bind(this);
 
     this.state = {
+      id: '',
       status: '',
       message: '',
       latitude: "N/A",
@@ -57,10 +58,17 @@ export default class SetStatus extends Component {
     });
     console.log("insise function "+this.state.latitude);
     console.log("this also "+this.state.longitude);
+    var location = {
+      latitude: this.state.latitude,
+      longitude: this.state.longitude
+    }
+    axios.patch('http://localhost:5000/page1/updateLatLong/'+this.state.id, location)
+    .then(res => { console.log("updated successfully: "+res.data);})
+    .catch(err => {console.log("some errorrr in updating latitude");});
   }
 
 
-  getLocation() {
+  getLocation(empID) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.getCoordinates, this.handleError);
     } else {
@@ -75,6 +83,13 @@ export default class SetStatus extends Component {
       });
       console.log("inside function "+this.state.latitude);
       console.log("this also "+this.state.longitude);
+      var location = {
+        latitude: this.state.latitude,
+        longitude: this.state.longitude
+      }
+      axios.patch('http://localhost:5000/page1/updateLatLong/'+this.state.id, location)
+      .then(res => { console.log("updated successfully: "+res.data);})
+      .catch(err => {console.log("some errorrr in updating latitude");});
     }
 
     getUserAddress(){
@@ -121,6 +136,7 @@ export default class SetStatus extends Component {
         axios.post('http://localhost:5000/page1/findByempID', user)
         .then(res => {
           if (res.data.empID === user.empID){
+            this.setState({id: res.data._id});
             console.log(res.data._id);
             console.log("id matched");
             axios.patch('http://localhost:5000/page1/updateStatus/'+res.data._id, user)
@@ -144,7 +160,6 @@ export default class SetStatus extends Component {
       this.setState({message: "First select which status you want to set!!"});
   }
 }
-
 
 
   render() {

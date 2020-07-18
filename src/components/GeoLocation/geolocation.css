@@ -22,24 +22,52 @@
 
 
 .getLocation{
+        margin-bottom: 1rem;
         font-size: 1.3120rem;
         padding: 0.3120rem 1.20rem;
         border: 0;
         background-color: #ffc400;
         color: black;
-        border-radius: 0.1875;
+        border-style: solid;
+        border-color: #ffc400;
+        border-radius: 0.5rem;
         transition: all 250ms ease-in-out;
         cursor: pointer;
         outline: none;
 }
 .getLocation:hover{
-    background-color: yellow
+    background-color: yellow;
+
 }
 .getLocation:active{
-    border: oldlace;
+    border-color: #ffc400;
 }
 .getLocation:focus {
      border:0.001rem solid white;
   }
 
+  #location {
+    background: #181818;
+    width: 16rem;
+    height: 2.5rem;
+    font-size: medium;
+    margin: 2rem 1rem 1rem 1rem;
+    border-style: solid;
+    border-color: #181818;
+    border-radius: 0.5rem;
+    color: #ffc401;
+    padding: 0.1%;
+    outline: none;
+}
 
+
+#location:focus {
+    background-color: palegoldenrod;
+    color: black;
+}
+
+.imgalt{
+    height: 50%;
+    width: 100%;
+    display: inline-block;
+}

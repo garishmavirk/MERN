@@ -39,9 +39,24 @@ router.route('/updateStatus/:id').patch((req, res) => {
   Employee.findById(req.params.id)
     .then(page1 => {
       page1.status = req.body.status;
+      page1.latitude = req.body.latitude;
+      page1.longitude = req.body.longitude;
 
       page1.save()
-        .then(() => res.json('Employee details updated!'))
+        .then(() => res.json('Employee status updated !!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/updateLatLong/:id').patch((req, res) => {
+  Employee.findById(req.params.id)
+    .then(page1 => {
+      page1.latitude = req.body.latitude;
+      page1.longitude = req.body.longitude;
+
+      page1.save()
+        .then(() => res.json('Employee Lat and Long updated !!'))
         .catch(err => res.status(400).json('Error: ' + err));
     })
     .catch(err => res.status(400).json('Error: ' + err));
@@ -83,19 +98,5 @@ router.route('/:id').delete((req, res) => {
     .then(() => res.json('Employee details deleted'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
-
-router.route('/updateStatus/:id').patch((req, res) => {
-  Employee.findById(req.params.id)
-    .then(page1 => {
-      page1.status = req.body.status;
-      page1.location = req.body.location;
-      
-      page1.save()
-        .then(() => res.json('Employee status updated!'))
-        .catch(err => res.status(400).json('Error: ' + err));
-    })
-    .catch(err => res.status(400).json('Error: ' + err));
-});
-
 
 module.exports = router;

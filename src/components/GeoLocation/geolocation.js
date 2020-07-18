@@ -2,21 +2,56 @@ import React from 'react';
 import "./geolocation.css";
 import Header from "../Header";
 import Map1 from "./map";
+import axios from "axios";
+import img from "./img.jpg";
 
 class GeoLocation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            empName: '',
             latitude: "N/A",
             longitude: "N/A",
-            userAddress: "N/A"
+            userAddress: "N/A",
+            message: "Your Location"
         };
         this.getLocation = this.getLocation.bind(this);
         this.getCoordinates = this.getCoordinates.bind(this);
         this.getUserAddress = this.getUserAddress.bind(this);
+        this.onChangeempName = this.onChangeempName.bind(this);
+        this.onClick = this.onClick.bind(this);
+    }
+
+    onChangeempName(e){
+      this.setState({empName: e.target.value});
+    }
+
+    onClick(e){
+      e.preventDefault();
+      //ReactDOM.render(<Dashboard />, document.getElementById("root"));
+      console.log("on clicking get location");
+      
+      const user = {
+        empName: this.state.empName
+      }
+      
+      console.log(user);
+      console.log("user.name" + user.empName);
+  
+     axios.post('http://localhost:5000/page1/findByName', user)
+     .then(res => {
+       var location = res.data[0];
+       this.setState({
+        latitude: res.data[0].latitude,
+        longitude: res.data[0].longitude
+    });
+    console.log(res.data[0].latitude + res.data[0].longitude)
+    })
+     .catch(err => console.log("errorrr--->>in searching name"));
     }
 
     getLocation() {
+      console.log("locate "+this.state.empName);
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(this.getCoordinates, this.handleError);
         } else {
@@ -60,20 +95,21 @@ class GeoLocation extends React.Component {
         return (
             <div className="map">
               <Header />
-                <h2>GeoLocation</h2>
-                <button class="getLocation" onClick={this.getLocation}>Get location</button>
+                <input type="text" id="location" name="location" placeholder=" Enter Employee Name" onChange={this.onChangeempName} />
+                <br />
+                <button class="getLocation" onClick={this.onClick}>Get location</button>
                 <br />
                 <h2>
                 latitude: {this.state.latitude}</h2>
                 <h2>
                 longitude: {this.state.longitude}</h2>
-                <p>Address: {this.state.userAddress}</p>
                 <div class="mapImg">
                 {
-                    this.state.latitude && this.state.longitude ?
+                    (this.state.latitude!=="N/A") && (this.state.longitude!=="N/A") ?
+                    
                     <Map1 />
                     :
-                    null
+                    <img class="imgalt" src={img} alt="Find Geolocation of your Employees"/>
 
                 }
                 </div>
