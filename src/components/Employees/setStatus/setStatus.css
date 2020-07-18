@@ -6,13 +6,13 @@
 }
 
 .lefthalf{
-    height: 100%;
+    height: 89%;
     width: 50%;
     text-align: center;
     display: inline-block;
 }
 .setbox{
-    margin: 4.5rem auto 4.5rem auto;
+    margin: 1.5rem auto 4rem auto;
     padding: 1rem;
     color: #ffc400;
     display: inline-block;
@@ -32,7 +32,7 @@
 }
 
 .righthalf{
-    height: 100%;
+    height: 89%;
     width: 50%;
     text-align: left;
     display: inline-block;
@@ -42,7 +42,7 @@
     margin: auto;
     color: #ffc401;
     display: inline-block;
-    margin-top: 11.3rem;
+    margin-top: 8.5rem;
     padding-left: 10rem;
 }
 .righthalfbutton {

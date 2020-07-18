@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import img from "./img.jpeg";
 import "./setStatus.css";
+import Header from "../../Header";
 
 export default class SetStatus extends Component {
   constructor(props) {
@@ -13,9 +14,17 @@ export default class SetStatus extends Component {
     this.Render4 = this.Render4.bind(this);
     this.Render5 = this.Render5.bind(this);
     this.onClick = this.onClick.bind(this);
+
+    this.getLocation = this.getLocation.bind(this);
+    this.getCoordinates = this.getCoordinates.bind(this);
+    this.getUserAddress = this.getUserAddress.bind(this);
+
     this.state = {
       status: '',
-      message: ''
+      message: '',
+      latitude: "N/A",
+      longitude: "N/A",
+      userAddress: "N/A"
     }
   }
 
@@ -41,18 +50,70 @@ export default class SetStatus extends Component {
     this.setState({status: "Business Trip"});
   }
 
+  setNA(){
+    this.setState({
+      latitude: "N/A", 
+      longitude: "N/A"
+    });
+    console.log("insise function "+this.state.latitude);
+    console.log("this also "+this.state.longitude);
+  }
+
+
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.getCoordinates, this.handleError);
+    } else {
+      alert("GeoLocation is not supported by this browser");
+    }
+  }
+
+  getCoordinates(position) {
+      this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+      });
+      console.log("inside function "+this.state.latitude);
+      console.log("this also "+this.state.longitude);
+    }
+
+    getUserAddress(){
+
+    }
+
+  handleError(error) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        alert("User denied the request for Geolocation.")
+        break;
+      case error.POSITION_UNAVAILABLE:
+        alert("Location information is unavailable.")
+        break;
+      case error.TIMEOUT:
+        alert("The request to get user location timed out.")
+        break;
+      case error.UNKNOWN_ERROR:
+        alert("An unknown error occurred.")
+        break;
+      default:
+        alert("An unknown error occurred.")
+      }
+    }
+
+
 
   onClick(e){
     e.preventDefault();
     //ReactDOM.render(<Dashboard />, document.getElementById("root"));
     console.log("on clicking set this as state");
     
+    
     const user = {
       status: this.state.status,
       empID: "E001"
     }
     
-    console.log("user.status" + user.status);
+    console.log("user.status " + user.status);
     
     if(user.status.length > 1){
         console.log("status fetching...")
@@ -63,7 +124,15 @@ export default class SetStatus extends Component {
             console.log(res.data._id);
             console.log("id matched");
             axios.patch('http://localhost:5000/page1/updateStatus/'+res.data._id, user)
-            .then(res => {console.log(user.status);
+            .then(res => {
+              if(user.status==="On Leave" || user.status==="On Sick Leave"){
+                console.log("On leave or sick leave (inside if)");
+                this.setNA();
+                }
+              if(user.status!=="On Leave" && user.status!=="On Sick Leave"){
+                console.log("inside other if");
+                this.getLocation();
+                }
               this.setState({message: "Status updated successfully!! ["+user.status+"]"});
             })
         .catch(err => {console.log("some errorrr");});
@@ -81,6 +150,7 @@ export default class SetStatus extends Component {
   render() {
     return (
         <div className="set">
+          <Header />
             <div className="lefthalf">
                 <div className="setbox">
                 <p>Set Your Status</p>

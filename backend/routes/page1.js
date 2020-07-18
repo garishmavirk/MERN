@@ -52,7 +52,8 @@ router.route('/add').post((req, res) => {
   const empID = req.body.empID;
   const empName = req.body.empName;
   const status = req.body.status;
-  const location = req.body.location;
+  const latitude = req.body.latitude;
+  const longitude = req.body.longitude;
   const phone = req.body.phone;
   const email = req.body.email;
 
@@ -60,7 +61,8 @@ router.route('/add').post((req, res) => {
     empID,
     empName,
     status,
-    location,
+    latitude,
+    longitude,
     phone,
     email,
   });
@@ -86,6 +88,7 @@ router.route('/updateStatus/:id').patch((req, res) => {
   Employee.findById(req.params.id)
     .then(page1 => {
       page1.status = req.body.status;
+      page1.location = req.body.location;
       
       page1.save()
         .then(() => res.json('Employee status updated!'))

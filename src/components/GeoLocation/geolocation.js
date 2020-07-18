@@ -25,7 +25,7 @@ class GeoLocation extends React.Component {
       }
 
       getCoordinates(position) {
-          console.log(position);
+          console.log(position.coords);
           this.setState({
               latitude: position.coords.latitude,
               longitude: position.coords.longitude

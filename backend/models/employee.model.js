@@ -6,7 +6,8 @@ const empSchema = new Schema({
   empID: { type: String, required: true, unique: true },
   empName: { type: String, required: true },
   status: { type: String, required: true },
-  location: { type: [Number], index: { type: '2dsphere', sparse: true}},
+  latitude: { type: String },
+  longitude: { type: String },
   phone: { type: String, required: true},
   email: { type: String, required: true, unique: true },
   
