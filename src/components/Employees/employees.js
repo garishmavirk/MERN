@@ -2,7 +2,7 @@ const employees = [
   {
     name: "Christopher Moris ",
     imgURL:
-      "https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg",
+      "https://raw.githubusercontent.com/7Aishwarya/Web-Development/master/images/Aishwarya.png",
     phone: "+123 456 789",
     email: "Working From Home"
   },

@@ -23,9 +23,11 @@ connection.once('open', () => {
 
 const page1Router = require('./routes/page1');
 const page2Router = require('./routes/page2');
+const page3Router = require('./routes/page3');
 
 app.use('/page1', page1Router);
 app.use('/page2', page2Router);
+app.use('/page3', page3Router);
 
 
 

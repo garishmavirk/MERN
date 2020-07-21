@@ -4,8 +4,15 @@ import axios from "axios";
 import img from "./img.jpeg";
 import "./setStatus.css";
 import Header from "../../Header";
+import { user } from "../../Login";
 
-export default class SetStatus extends Component {
+export var user1 = {
+  status: "",
+  empID: "",
+  time: ""
+}
+
+export class SetStatus extends Component {
   constructor(props) {
     super(props);
     this.Render1 = this.Render1.bind(this);
@@ -121,35 +128,43 @@ export default class SetStatus extends Component {
     e.preventDefault();
     //ReactDOM.render(<Dashboard />, document.getElementById("root"));
     console.log("on clicking set this as state");
-    
-    
-    const user = {
+    console.log("for logged in user with empID as: "+user.empID);
+    const date = new Date();
+    console.log(date);
+    user1 = {
       status: this.state.status,
-      empID: "E001"
+      empID: user.empID,
+      time: date,
+      date: date.toDateString()
     }
     
-    console.log("user.status " + user.status);
+    console.log("user.status " + user1.status);
     
-    if(user.status.length > 1){
+    if(user1.status.length > 1){
         console.log("status fetching...")
         //this.setState({message: "Status updated successfully!! ["+user.status+"]"});
-        axios.post('http://localhost:5000/page1/findByempID', user)
+
+        axios.post('http://localhost:5000/page3/add', user1)
+        .then(res => { console.log("status added to db: "+res.data);})
+        .catch(err => {console.log("some errorrr in adding status to db");});
+
+        axios.post('http://localhost:5000/page1/findByempID', user1)
         .then(res => {
-          if (res.data.empID === user.empID){
+          if (res.data.empID === user1.empID){
             this.setState({id: res.data._id});
             console.log(res.data._id);
             console.log("id matched");
-            axios.patch('http://localhost:5000/page1/updateStatus/'+res.data._id, user)
+            axios.patch('http://localhost:5000/page1/updateStatus/'+res.data._id, user1)
             .then(res => {
-              if(user.status==="On Leave" || user.status==="On Sick Leave"){
+              if(user1.status==="On Leave" || user1.status==="On Sick Leave"){
                 console.log("On leave or sick leave (inside if)");
                 this.setNA();
                 }
-              if(user.status!=="On Leave" && user.status!=="On Sick Leave"){
+              if(user1.status!=="On Leave" && user1.status!=="On Sick Leave"){
                 console.log("inside other if");
                 this.getLocation();
                 }
-              this.setState({message: "Status updated successfully!! ["+user.status+"]"});
+              this.setState({message: "Status updated successfully!! ["+user1.status+"]"});
             })
         .catch(err => {console.log("some errorrr");});
           }

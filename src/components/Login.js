@@ -6,7 +6,11 @@ import "./style.scss";
 import Dashboard from "./Dashboard";
 import axios from "axios";
 
-export default class Login extends Component {
+export var user = {
+  empID: '',
+  password: ''
+}
+export class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -32,7 +36,7 @@ export default class Login extends Component {
   onSubmit(e){
     e.preventDefault();
     
-    const user = {
+    user = {
       empID: this.state.empID,
       password: this.state.password
     }

@@ -6,7 +6,7 @@ import "./Dashboard.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Icons3 from "./Home/Icons3";
 import Dashboard from "./Dashboard";
-import SetStatus from "./Employees/setStatus/setStatus";
+import { SetStatus } from "./Employees/setStatus/setStatus";
 
 function Render1() {
   return ReactDOM.render(<Icons3 />, document.getElementById("root"));

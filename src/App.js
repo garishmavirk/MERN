@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import Login from "./components/Login";
+import { Login } from "./components/Login";
 import StatusNeo from "./components/StatusNeo";
 
 class App extends React.Component {
