@@ -63,8 +63,7 @@ export class SetStatus extends Component {
       latitude: "N/A", 
       longitude: "N/A"
     });
-    console.log("insise function "+this.state.latitude);
-    console.log("this also "+this.state.longitude);
+    
     var location = {
       latitude: this.state.latitude,
       longitude: this.state.longitude
@@ -126,7 +125,6 @@ export class SetStatus extends Component {
 
   onClick(e){
     e.preventDefault();
-    //ReactDOM.render(<Dashboard />, document.getElementById("root"));
     console.log("on clicking set this as state");
     console.log("for logged in user with empID as: "+user.empID);
     const date = new Date();
@@ -134,7 +132,7 @@ export class SetStatus extends Component {
     user1 = {
       status: this.state.status,
       empID: user.empID,
-      time: date,
+      time: date.toLocaleTimeString(),
       date: date.toDateString()
     }
     

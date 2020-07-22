@@ -7,12 +7,16 @@ body{
     width: 100%;
     background-color: black;
     text-align: center;
+    display: inline-block;
+    font-size: large;
     
     
 }
 
 .calendar h1{
-    margin: 3rem;
+    font-size: 4rem;
+    margin: 2rem;
+    margin-top: 0;
     color: #ffd44d;
 }
 
@@ -42,9 +46,7 @@ body{
     
 }
 
-.react-calendar__month-view__weekdays{
-    color: #ffc400
-}
+
 
 .react-calendar__tile.react-calendar__tile--now.react-calendar__month-view__days__day.react-calendar__month-view__days__day--weekend{
     background-color: #ffc400;
@@ -70,6 +72,85 @@ div.react-calendar__year-view__months{
     color: #ffc400;
 }
 
+.react-calendar__month-view__weekdays__weekday{
+    padding: 0;
+}
+.react-calendar__navigation button{
+    font-size: x-large;
+    margin-bottom: 0;
+}
+.react-calendar__month-view__days{
+    font-size: x-large;
+}
+
 div.react-calendar {
     background: black;
+    padding: 1rem;
+}
+
+#calendarbyname {
+    background: #181818;
+    width: 20rem;
+    height: 2.5rem;
+    font-size: medium;
+    margin: 1rem 1rem 1rem 1rem;
+    border-style: solid;
+    border-color: #181818;
+    border-radius: 0.5rem;
+    color: #ffc401;
+    padding: 0.1%;
+    outline: none;
+}
+
+
+#calendarbyname:focus {
+    background-color: palegoldenrod;
+    color: black;
+}
+
+.getName{
+    margin-bottom: 1rem;
+    font-size: 1.3120rem;
+    padding: 0.3120rem 1.20rem;
+    border: 0;
+    background-color: #ffc400;
+    color: black;
+    border-style: solid;
+    border-color: #ffc400;
+    border-radius: 0.5rem;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    outline: none;
+}
+.getName:hover{
+background-color: yellow;
+
+}
+.getName:active{
+border-color: #ffc400;
+}
+.getName:focus {
+ border:0.001rem solid white;
+}
+
+.calLeft{
+      height: 64%;
+      width: 45.4%;
+      display: inline-block;
+      float:left;
+      padding-top: 8rem;
+      border-right: solid 0.1rem white;
+  }
+.calRight{
+    height: 64%;
+    width: 54%;
+    display: inline-block;
+    padding-top: 8rem;
+    float: right;
+    border-left: solid 0.1rem #ffc400;
+  }
+
+  .react-calendar__month-view__weekdays{
+    color: #ffc400;
+    font-size: 1rem;
 }
