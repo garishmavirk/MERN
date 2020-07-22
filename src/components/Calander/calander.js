@@ -5,6 +5,9 @@ import "react-calendar/dist/Calendar.css";
 import Header from "../Header";
 import { user } from "../Login";
 import axios from "axios";
+import nl2br from 'react-newline-to-break';
+
+var display = "";
 
 const ReactCalendar = () => {
     const [date, setDate] = useState(new Date());
@@ -21,10 +24,14 @@ const ReactCalendar = () => {
         axios.post('http://localhost:5000/page3/find', user1)
         .then(res => {console.log("Fetching employee all statuses");
             console.log(res.data);
-            res.data.map(display => {
-                console.log(display.status);
-                console.log(display.time);
+            display = "";
+            res.data.map(data1 => {
+                console.log(data1.status);
+                console.log(data1.time);
+                display = display+data1.status+'  ['+data1.time.slice(11,18)+"]\n";
             });
+            console.log("check display\n"+display);
+            setState(display);
             })
         .catch(err => {console.log("some errorrr in fetching emp status on date");});
     };
@@ -37,9 +44,8 @@ const ReactCalendar = () => {
                 <Calendar onChange={onChange} value={date}/>
                 {console.log("same as before or not: "+date)}
                 {date.toDateString()}
-            </div>
-            <div className="scheduler">
-                
+                <br />
+                {nl2br(status)}
             </div>
         </div>
     );
