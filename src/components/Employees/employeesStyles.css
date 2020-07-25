@@ -1,5 +1,6 @@
 body{
   background-color: black;
+  font-family: 'Montserrat', sans-serif;
 }
 .heading {
   text-align: center;
@@ -13,7 +14,7 @@ body{
   position: relative;
   padding: 25px 15px;
   margin: 50px 50px;
-  height: 7rem;
+  height: 4.5rem;
   width: 25rem;
   box-shadow: 0 2px 5px #ccc;
   text-align: left;
@@ -23,6 +24,7 @@ body{
 .top {
   border-radius: 25px 25px 0 0;
   height: 40px;
+  width: 25rem;
   background-color: #ffc100;
   position: absolute;
   top: 0;
@@ -37,6 +39,9 @@ body{
   flex: 1;
   margin: 10% 20px 0;
 }
+.top .name{
+  margin-top: 0.5rem;
+}
 
 .card img {
   margin: 30px 20px 0 0;
@@ -48,34 +53,48 @@ body{
   width: 5rem;
   height: 5rem;
   margin-top: 0.5rem;
+  float: right;
 }
 
 .bottom {
-  margin-top: 75px;
+  margin-top: 2rem;
 }
 
 .info {
-  margin: 20px 0;
+  margin: 0.2rem;
   color: black;
 }
 .backemployees {
   background: black;
   text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+h2.name{
+  margin-right: 0;
+  font-size: x-large;
 }
 
 .left {
   display: inline-block;
   text-align: center;
+  float: left;
+  width: 60%;
+  padding-left: 5rem;
 }
 
 .right {
-  width: 35%;
+  width: 30%;
   background: transparent;
   display: inline-block;
+  position: fixed;
   color: #ccc;
   height: 50%;
   text-align: center;
-  margin-left: auto;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  padding-top: 10rem;
+  float: right;
 }
 
 #fname{
@@ -104,7 +123,7 @@ body{
 form{
   text-align: center;
   margin: auto;
-  font-family: sans-serif ;
+  font-family: 'Montserrat', sans-serif;
   font-size: large;
 }
 

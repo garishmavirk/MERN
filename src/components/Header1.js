@@ -1,19 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import img from "./statusneo1.png";
+import img from "./statusneo.png";
 import setStatus from "./editStatusIcon.png";
 import "./Dashboard.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Icons3 from "./Home/Icons3";
 import Dashboard from "./Dashboard";
 import { SetStatus } from "./Employees/setStatus/setStatus"; 
+import axios from "axios";
 
 function Render1() {
   return ReactDOM.render(<Icons3 />, document.getElementById("root"));
 }
 
 function Render2() {
-  return ReactDOM.render(<Dashboard />, document.getElementById("root"));
+  axios.get('http://localhost:5000/page1/')
+   .then(res => {
+    ReactDOM.render(<Dashboard totalEmployees = {res.data.length}/>, document.getElementById("root"));
+  })
+   .catch(err => {console.log("errorrr");});
+ // return ReactDOM.render(<Dashboard />, document.getElementById("root"));
 }
 
 function Render3() {

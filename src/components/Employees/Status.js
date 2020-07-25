@@ -28,9 +28,8 @@ function Status() {
       <div class="right">
         <Fetch />
       </div>
-      <h1 className="heading">My employees</h1>
-      
       <div class="left">
+      <h1 className="heading">My employees</h1>
       {Render()}
       </div>
     </div>

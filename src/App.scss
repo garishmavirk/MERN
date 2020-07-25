@@ -1,6 +1,9 @@
 //Custom Fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+html{
+  font-family: 'Montserrat', sans-serif;
+}
 hr{
   border-style: none;
   border-top-style: dotted;
@@ -17,7 +20,7 @@ hr{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-top: 3.2rem;
 }
 

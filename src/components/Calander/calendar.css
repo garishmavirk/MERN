@@ -1,10 +1,14 @@
 body{
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .calendar{
     height: 100vh;
     width: 100%;
+    background-image: url("imgCal.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: black;
     text-align: center;
     display: inline-block;
@@ -40,6 +44,7 @@ body{
 
 .react-calendar__navigation__label{
     color: #ffc400;
+    height: 115%;
 }
 .react-calendar__navigation__arrow{
     color: #ffc400;
@@ -134,11 +139,11 @@ border-color: #ffc400;
 }
 
 .calLeft{
-      height: 64%;
+      height: 70.5%;
       width: 45.4%;
       display: inline-block;
       float:left;
-      padding-top: 8rem;
+      padding-top: 5rem;
       border-right: solid 0.1rem white;
   }
 .calRight{
@@ -153,4 +158,14 @@ border-color: #ffc400;
   .react-calendar__month-view__weekdays{
     color: #ffc400;
     font-size: 1rem;
+}
+.react-calendar__tile.react-calendar__decade-view__years__year{
+    color: #ffc400;
+}
+.react-calendar__tile.react-calendar__year-view__months__month{
+    color: #ffc400;
+}
+
+.react-calendar__tile.react-calendar__century-view__decades__decade{
+    color: #ffc400;
 }

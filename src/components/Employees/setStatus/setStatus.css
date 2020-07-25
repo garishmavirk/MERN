@@ -1,4 +1,9 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .set{
+    background-image: url("setStatusImg2.png");
     background-color: black;
     height: 100%;
     width: 100%;
@@ -72,7 +77,6 @@
     background-color: #ffc400;
     width: 16rem;
     height: 2rem;
-    font-size: large;
     border-style: solid;
     border-color: #ffc400;
     border-radius: 0.5rem;

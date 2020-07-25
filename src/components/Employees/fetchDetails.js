@@ -74,7 +74,6 @@ export default class Fetch extends Component {
    axios.post('http://localhost:5000/page1/findByFilter', filterStatus)
    .then(res => {
      const data = res.data;
-     this.setState( { posts: data });
     ReactDOM.render(
       <ByFilter
       user = {res.data}
