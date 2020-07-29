@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.77be29b1.chunk.css",
+    "main.js": "/static/js/main.745c707d.chunk.js",
+    "main.js.map": "/static/js/main.745c707d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ba18c9a2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ba18c9a2.js.map",
+    "static/css/2.8dbe6964.chunk.css": "/static/css/2.8dbe6964.chunk.css",
+    "static/js/2.16af2565.chunk.js": "/static/js/2.16af2565.chunk.js",
+    "static/js/2.16af2565.chunk.js.map": "/static/js/2.16af2565.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.69b98fe17b234eb52c8dba3edfc198f7.js": "/precache-manifest.69b98fe17b234eb52c8dba3edfc198f7.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.8dbe6964.chunk.css.map": "/static/css/2.8dbe6964.chunk.css.map",
+    "static/css/main.77be29b1.chunk.css.map": "/static/css/main.77be29b1.chunk.css.map",
+    "static/js/2.16af2565.chunk.js.LICENSE.txt": "/static/js/2.16af2565.chunk.js.LICENSE.txt",
+    "static/media/geolocation.css": "/static/media/backgroundImg.f439f85c.png",
+    "static/media/calander.png": "/static/media/calander.9f950229.png",
+    "static/media/Dashboard.css": "/static/media/dashboard.83d4db06.png",
+    "static/media/editStatusIcon.png": "/static/media/editStatusIcon.1b36edba.png",
+    "static/media/empicon.jpg": "/static/media/empicon.efe80631.jpg",
+    "static/media/employeeofmonth.png": "/static/media/employeeofmonth.9ad2a1a2.png",
+    "static/media/geolocation.png": "/static/media/geolocation.05c0eef2.png",
+    "static/media/statusStyles.css": "/static/media/grass.1b1fe770.png",
+    "static/media/img.png": "/static/media/img.43a4863c.png",
+    "static/media/img.jpeg": "/static/media/img.c5d36bd8.jpeg",
+    "static/media/calendar.css": "/static/media/imgCal.fe354bc8.png",
+    "static/media/login.png": "/static/media/login.b6e2243e.png",
+    "static/media/onwork.png": "/static/media/onwork.798498f3.png",
+    "static/media/setStatus.css": "/static/media/setStatusImg2.4bb9ca3f.png",
+    "static/media/status.png": "/static/media/status.80803bae.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ba18c9a2.js",
+    "static/css/2.8dbe6964.chunk.css",
+    "static/js/2.16af2565.chunk.js",
+    "static/css/main.77be29b1.chunk.css",
+    "static/js/main.745c707d.chunk.js"
+  ]
+}
